@@ -1,5 +1,5 @@
 # server-tuning-mongodb
-server tuning
+## Ulimit
 
 1.- ir a la ruta y abrir el archivo:
 ``sudo vi /etc/systemd/user.conf``
@@ -66,5 +66,25 @@ cpu time               (seconds, -t) unlimited
 max user processes              (-u) 200000
 virtual memory          (kbytes, -v) unlimited
 file locks                      (-x) unlimited
+```
+## Disable Transparent Huge Pages (THP)
+
+1.- crear el siguiente archivo:
+
+``sudo touch /etc/systemd/system/disable-transparent-huge-pages.service``
+
+2.- pegar en el archivo:
+
+```text
+[Unit]
+Description=Disable Transparent Huge Pages (THP)
+DefaultDependencies=no
+After=sysinit.target local-fs.target
+Before=mongod.service
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'echo never | tee /sys/kernel/mm/transparent_hugepage/enabled > /dev/null'
+[Install]
+WantedBy=basic.target
 ```
 
