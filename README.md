@@ -99,3 +99,7 @@ WantedBy=basic.target
 
 ``cat /sys/kernel/mm/transparent_hugepage/enabled``
 
+resultado:
+
+``always madvise [never]``
+
