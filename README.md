@@ -87,4 +87,15 @@ ExecStart=/bin/sh -c 'echo never | tee /sys/kernel/mm/transparent_hugepage/enabl
 [Install]
 WantedBy=basic.target
 ```
+3.- tirar el siguiente comando
+
+``sudo systemctl daemon-reload``
+
+4.- iniciar el servicio
+
+``sudo systemctl start disable-transparent-huge-pages``
+
+5.- verificar THP
+
+``cat /sys/kernel/mm/transparent_hugepage/enabled``
 
