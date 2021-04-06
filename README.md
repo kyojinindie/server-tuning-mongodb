@@ -103,3 +103,7 @@ resultado:
 
 ``always madvise [never]``
 
+6.- configurar thp para reinicio:
+
+``sudo systemctl enable disable-transparent-huge-pages``
+
