@@ -18,7 +18,7 @@ DefaultLimitMEMLOCK=unlimited
 ```
 
 3.- ir a la ruta y abrir el archivo:
-``sudo vi /etc/security/limits.conf``
+``sudo vi /etc/systemd/system.conf``
 
 4.-dar la siguiente configuración:
 
@@ -31,10 +31,10 @@ DefaultLimitNPROC=200000
 DefaultLimitMEMLOCK=unlimited
 ```
 
-3.- ir a la ruta y abrir el archivo:
+4.- ir a la ruta y abrir el archivo:
 ``sudo vi /etc/security/limits.conf``
 
-4.-dar la siguiente configuración:
+5.-dar la siguiente configuración:
 
 ```text
 *                soft     nproc          200000
