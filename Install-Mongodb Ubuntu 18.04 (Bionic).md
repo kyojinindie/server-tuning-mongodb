@@ -79,3 +79,12 @@ vi /etc/mongod.conf
 security:
     authorization: enabled
 ```
+
+mongodb code=exited, status=14
+
+```shell
+chown -R mongodb:mongodb /var/lib/mongodb
+chown mongodb:mongodb /tmp/mongodb-27017.sock
+
+sudo service mongod restart
+```
