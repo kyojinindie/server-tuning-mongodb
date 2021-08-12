@@ -62,3 +62,20 @@ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongod
 sudo apt update
 sudo apt-get install -y mongodb-org
 ```
+## Seguridad
+
+
+```shell
+db.createUser({
+... "user":"user",
+... "pwd":"password",
+... "roles":[{"role":"root","db":"admin"}]
+... })
+```
+
+vi /etc/mongod.conf
+
+```yml
+security:
+    authorization: enabled
+```
